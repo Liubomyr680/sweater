@@ -1,4 +1,5 @@
 package com.example.sweater;
+
 import com.example.sweater.domain.Message;
 import com.example.sweater.reopsitory.MessageRepos;
 import org.springframework.stereotype.Controller;
@@ -19,7 +20,7 @@ public class GreetingController {
 
     @GetMapping("/greeting")
     public String greeting(
-            @RequestParam(name="name", required=false, defaultValue="World") String name,
+            @RequestParam(name = "name", required = false, defaultValue = "World") String name,
             Map<String, Object> model
     ) {
         model.put("name", name);
@@ -48,6 +49,7 @@ public class GreetingController {
         return "main";
     }
 
+    //post mapping for filter
     @PostMapping("filter")
     public String filter(@RequestParam String filter, Map<String, Object> model) {
         Iterable<Message> messages;
